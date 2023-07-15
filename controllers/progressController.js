@@ -17,7 +17,7 @@ const findOne = async (req, res) => {
 }
 
 const save = async (req, res) => {
-    const progress = new Progress(req.body.nome, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo);
+    const progress = new Progress(req.body.attempt, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo);
 
     await progressModel.save(progress);
 
@@ -32,7 +32,7 @@ const update = async (req, res) => {
         return;
     }
 
-    const progress = new Progress(req.body.nome, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo);
+    const progress = new Progress(req.body.attempt, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo);
 
     await progressModel.update(req.params.progress_id, progress);
 

@@ -1,13 +1,9 @@
 class Progress {
-    constructor(nome, ano, mes, dia, hora, minuto, segundo) {
-        this.nome = nome;
-        this.ano = ano;
-        this.mes = mes;
-        this.dia = dia;
-        this.hora = hora;
-        this.minuto = minuto;
-        this.segundo = segundo;
+    constructor(attempt, ano, mes, dia, hora, minuto, segundo) {
+        this.attempt = attempt;
+        this.timestamp = new Date(ano, mes, dia, hora, minuto, segundo).getTime() + "";
     }
+    
 }
 
 module.exports = { Progress }
