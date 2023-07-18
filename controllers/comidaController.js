@@ -27,7 +27,7 @@ const findOne = async (req, res) => {
 
 const save = async (req, res) => {
     try {
-        const comida = new Comida(validateComida(req.body.nome, req.body.quantidade, req.body.carb, req.body.protl, req.body.proth, req.body.fat, req.body.img));
+        const comida = new Comida(validateComida(req.body));
     
         await comidaModel.save(comida);
         res.status(201).json(comida);   
@@ -45,7 +45,7 @@ const update = async (req, res) => {
     }
 
     try {
-        const comida = new Comida(validateComida(req.body.nome, req.body.quantidade, req.body.carb, req.body.protl, req.body.proth, req.body.fat, req.body.img));
+        const comida = new Comida(validateComida(req.body));
     
         await comidaModel.update(req.params.comida_id, comida);
         res.status(201).json(comida);   

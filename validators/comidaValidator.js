@@ -7,7 +7,7 @@ const comida = Joi.object({
     protl: Joi.number().default(0).positive(),
     proth: Joi.number().default(0).positive(),
     fat: Joi.number().default(0).positive(),
-    img: Joi.number().default("")
+    img: Joi.string().default("")
 });
 
 const validateComida = (params) => {

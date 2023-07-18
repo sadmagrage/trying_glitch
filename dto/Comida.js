@@ -1,11 +1,11 @@
 class Comida {
-    constructor(nome, quantidade, carb, protl, proth, fat, img) {
-        this.nome = nome;
-        this.carb = carb/quantidade;
-        this.protl = protl/quantidade;
-        this.proth = proth/quantidade;
-        this.fat = fat/quantidade;
-        this.img = img;
+    constructor(validated) {
+        this.nome = validated.nome;
+        this.carb = validated.carb/validated.quantidade;
+        this.protl = validated.protl/validated.quantidade;
+        this.proth = validated.proth/validated.quantidade;
+        this.fat = validated.fat/validated.quantidade;
+        this.img = validated.img;
     }
 }
 

@@ -7,6 +7,8 @@ const route = express.Router();
 
 route.use(bodyparser.json());
 
+route.get("/progress/convert", controller.convertTimestamp);
+
 route.get("/progress", controller.findAll);
 
 route.get("/progress/:progress_id", controller.findOne);

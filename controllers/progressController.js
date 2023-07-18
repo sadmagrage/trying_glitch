@@ -2,6 +2,15 @@ const { Progress } = require("../dto/Progress");
 const progressModel = require("../models/progressModel");
 const { validateProgress} = require("../validators/progressValidator");
 
+const convertTimestamp = (req, res) => {
+    const { timestamp } = req.query;
+    const date = new Date(parseInt(timestamp));
+    
+    date.setHours(date.getHours() - 3);
+
+    res.status(200).json(date.toUTCString());
+};
+
 const findAll = async (req, res) => {
     try {
         res.status(200).json(await progressModel.findAll());
@@ -26,7 +35,14 @@ const findOne = async (req, res) => {
 
 const save = async (req, res) => {
     try {
-        const progress = new Progress(validateProgress(req.body.attempt, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo));
+        const progressByAttempt = await progressModel.findByAttempt(req.body.attempt);
+
+        if (progressByAttempt) {
+            res.status(400).send("Attempt already exists !");
+            return;
+        }
+
+        const progress = new Progress(validateProgress(req.body));
         
         await progressModel.save(progress);
     
@@ -45,7 +61,7 @@ const update = async (req, res) => {
     }
 
     try {
-        const progress = new Progress(validateProgress(req.body.attempt, req.body.ano, req.body.mes, req.body.dia, req.body.hora, req.body.minuto, req.body.segundo));
+        const progress = new Progress(validateProgress(req.body));
     
         await progressModel.update(req.params.progress_id, progress);
     
@@ -73,4 +89,4 @@ const del = async (req, res) => {
 
 };
 
-module.exports = { findAll, findOne, save, update, del }
+module.exports = { convertTimestamp, findAll, findOne, save, update, del }
