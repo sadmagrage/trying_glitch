@@ -118,6 +118,11 @@ Retorna um progress específico passando como parâmetro "progress_id"<br>
 <br>
 Exemplo de url: localhost:3000/progress/296a4172-d66d-11ed-8c84-7eae77e2dcf9<br><br>
 
+### Conversão de timestamp para UTC String GET: /convert?timestamp={timestamp}
+Retorna o timestamp inserido em UTC String<br>
+<br>
+Exemplo de url: localhost:/progress/convert?timestamp=1690148795<br><br>
+
 ### POST:
 Adiciona um item a tabela pelo formato JSON.<br>
 Hora, minuto e segundo serão considerados como 0, caso não tenham um valor inserido.<br>
