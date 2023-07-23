@@ -2,7 +2,8 @@
 
 ## COMIDA: /comida
 <br>
-Esta endpoint é dedicada a guardar e retornar os macros dos alimentos, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.
+Esta endpoint é dedicada a guardar e retornar os macros dos alimentos, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.<br>
+Essa endpoint foi usada nesse [site](https://sadmagrage.github.io/macros)]
 <br>
 Definição:<br>
 comida_id -> identificador do alimento, passado como UUID e reservado como binário<br>
