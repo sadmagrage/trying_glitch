@@ -21,16 +21,19 @@ proth: FLOAT NOT NULL,<br>
 fat: FLOAT NOT NULL,<br>
 img: VARCHAR(255) NOT NULL<br>
 <br>
+
 ### GET_ALL:
 Retorna a lista de alimentos registrados<br>
 <br>
 Url: localhost:3000/comida<br>
 <br>
+
 ### GET_ONE: /{comida_id}
 Retorna um alimento específico passando como parâmetro "comida_id"<br>
 <br>
 Exemplo de url: localhost:3000/comida/3e7051ea-9e3d-11ed-982e-1cb72c8ac6b9<br>
 <br>
+
 ### POST:
 Adiciona um item a tabela pelo formato JSON.<br>
 Em "quantidade" será passado um valor em gramas, que dividirão carb, protl, proth e fat. Por exemplo, se a cada 100 gramas de um alimento, ele contém 10 gramas de carboidrato, a quantidade deve ser passada como 100, e o "carb" como 10, e no banco de dados, o "carb" estará como 0.1, equivalendo a 0.1g de carboidrato a cada grama do alimento.<br>
@@ -68,6 +71,7 @@ Exemplo: {<br>
 Url: localhost:3000/comida<br>
 <br>
 <br>
+
 ### PUT: /{comida_id}
 Altera os valores do alimento já inserido, é necessário enviar o corpo todo com as alterações feitas, o alimento será identificado pelo "comida_id".<br>
 <br>
@@ -83,11 +87,13 @@ Exemplo: {<br>
 <br>
 Exemplo de url: localhost:3000/comida/3e7051ea-9e3d-11ed-982e-1cb72c8ac6b9<br>
 <br>
+
 ### DELETE: /{comida_id}
 Deleta um item da tabela passando o "comida_id".<br>
 <br>
 Exemplo de url: localhost:3000/comida/3e7051ea-9e3d-11ed-982e-1cb72c8ac6b9<br>
 <br>
+
 ## PROGRESS: /progress
 <br>
 Esta endpoint é dedicada a guardar e retornar timestamps, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.
