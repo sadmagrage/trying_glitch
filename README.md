@@ -1,10 +1,10 @@
 # trying_glitch
 
 ## COMIDA: /comida
-<br>
 Esta endpoint é dedicada a guardar e retornar os macros dos alimentos, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.<br>
-Essa endpoint foi usada nesse [site](https://sadmagrage.github.io/macros)
-<br>
+Essa endpoint foi usada nesse site: https://sadmagrage.github.io/macros
+
+
 Definição:<br>
 comida_id -> identificador do alimento, passado como UUID e reservado como binário<br>
 carb -> todo tipo de carboidrato<br>
@@ -71,7 +71,6 @@ Exemplo: {<br>
 <br>
 Url: localhost:3000/comida<br>
 <br>
-<br>
 
 ### PUT: /{comida_id}
 Altera os valores do alimento já inserido, é necessário enviar o corpo todo com as alterações feitas, o alimento será identificado pelo "comida_id".<br>
@@ -96,9 +95,9 @@ Exemplo de url: localhost:3000/comida/3e7051ea-9e3d-11ed-982e-1cb72c8ac6b9<br>
 <br>
 
 ## PROGRESS: /progress
-<br>
-Esta endpoint é dedicada a guardar e retornar timestamps, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.
-<br>
+Esta endpoint é dedicada a guardar e retornar timestamps, os métodos GET são de livre acesso, porém POST, PUT e DELETE são protegidos por autenticação básica.<br>
+Essa endpoint foi usada nesse site: https://sadmagrage.github.io/progress
+
 Definição:<br>
 progress -> momento de um exato dia e hora, especificado por ano, mes, dia, hora, minuto e segundo.<br>
 progress_id -> identificador de progress, passado como UUID e reservado como char<br>
@@ -107,7 +106,7 @@ TABELA new_progress<br>
 progress_id: BINARY(16) PRIMARY KEY,<br>
 attempt: INT NOT NULL UNIQUE,<br>
 timestamp: VARCHAR(255) NOT NULL<br>
-<br><br>
+<br>
 
 ### GET_ALL:
 Retorna uma lista de progress registrados<br>
