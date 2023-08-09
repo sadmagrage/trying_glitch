@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../public/css/css.css">
+    <!-- <link rel="stylesheet" href="css/css.css"> -->
+</head>
+<body>
+    <main id="main">
+        <div class="overlay">
+            <div class="container-endpoint" onclick="redirectUrl('comida')">
+                <h3>Endpoint: /comida</h3>
+                <div class="endpoint" id="comida"></div>
+            </div>
+            <div class="container-endpoint" onclick="redirectUrl('progress')">
+                <h3> Endpoint: /progress</h3>
+                <div class="endpoint" id="progress"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function redirectUrl(endpoint) {
+            window.location.href = "https://humorous-angry-detail.glitch.me/" + endpoint;
+        }
+    </script>
+</body>
+</html>
