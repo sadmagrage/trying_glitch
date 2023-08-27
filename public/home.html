@@ -5,26 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../public/css/css.css">
-    <!-- <link rel="stylesheet" href="css/css.css"> -->
+    <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
     <main id="main">
         <div class="container">
             <div class="redirect" onclick="redirectUrl('github')">
                 <h3 class="title">Repositório GitHub</h3>
-                <div class="endpoint" id="github"><img src="../public/images/github.png" alt=""></div>
+                <div class="endpoint" id="github"><img src="./images/github.png" alt=""></div>
             </div>
             <div class="redirect" onclick="redirectUrl('comida')">
                 <h3 class="title">Endpoint: /comida</h3>
-                <div class="endpoint" id="comida"></div>
+                <div class="endpoint" id="comida">
+                    <img src="./images/comida.png" alt="">
+                </div>
                 <div class="description">
                     <p class="content-text">Retorna e manipula informações sobre alimentos, como, carboidrato, proteina, gordura e imagem.</p>
                 </div>
             </div>
             <div class="redirect" onclick="redirectUrl('progress')">
                 <h3 class="title"> Endpoint: /progress</h3>
-                <div class="endpoint" id="progress"></div>
+                <div class="endpoint" id="progress">
+                    <img src="./images/progress.webp" alt="">
+                </div>
                 <div class="description">
                     <p class="content-text">Retorna e manipula informações sobre o tempo, passando ano, mes, dia, hora, minuto e segundo. Para ser reservado como timestamp.</p>
                 </div>

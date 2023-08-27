@@ -7,7 +7,7 @@ const route = express.Router();
 route.use(express.static('public'));
 
 route.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../views/home.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
 module.exports = { route };

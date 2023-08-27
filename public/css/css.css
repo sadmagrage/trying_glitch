@@ -9,7 +9,7 @@ main {
 }
 .redirect {
     width: 30vw;
-    height: 50vh;
+    height: min-content;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -28,16 +28,12 @@ main {
 .redirect:hover {
     cursor: pointer;   
 }
-#comida {
-    background-image: url("https://img.freepik.com/fotos-gratis/variedade-plana-com-deliciosa-comida-brasileira_23-2148739179.jpg?w=2000");
-}
-#progress {
-    background-image: url("https://static.preparaenem.com/conteudo_legenda/d1ab22d90cac247c5ff3df6ef95701bd.jpg");
+#comida, #progress, #github {
+    display: flex;
+    justify-content: center;
 }
 #github {
     background-color: black;
-    display: flex;
-    justify-content: center;
     align-content: center;
 }
 .container {
