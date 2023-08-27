@@ -10,20 +10,35 @@
 </head>
 <body>
     <main id="main">
-        <div class="overlay">
-            <div class="container-endpoint" onclick="redirectUrl('comida')">
-                <h3>Endpoint: /comida</h3>
-                <div class="endpoint" id="comida"></div>
+        <div class="container">
+            <div class="redirect" onclick="redirectUrl('github')">
+                <h3 class="title">Repositório GitHub</h3>
+                <div class="endpoint" id="github"><img src="../public/images/github.png" alt=""></div>
             </div>
-            <div class="container-endpoint" onclick="redirectUrl('progress')">
-                <h3> Endpoint: /progress</h3>
+            <div class="redirect" onclick="redirectUrl('comida')">
+                <h3 class="title">Endpoint: /comida</h3>
+                <div class="endpoint" id="comida"></div>
+                <div class="description">
+                    <p class="content-text">Retorna e manipula informações sobre alimentos, como, carboidrato, proteina, gordura e imagem.</p>
+                </div>
+            </div>
+            <div class="redirect" onclick="redirectUrl('progress')">
+                <h3 class="title"> Endpoint: /progress</h3>
                 <div class="endpoint" id="progress"></div>
+                <div class="description">
+                    <p class="content-text">Retorna e manipula informações sobre o tempo, passando ano, mes, dia, hora, minuto e segundo. Para ser reservado como timestamp.</p>
+                </div>
             </div>
         </div>
     </main>
     <script>
         function redirectUrl(endpoint) {
-            window.location.href = "https://humorous-angry-detail.glitch.me/" + endpoint;
+            if (endpoint == "github") {
+                window.location.href = "https://github.com/sadmagrage/trying_glitch/";
+            }
+            else {
+                window.location.href = "https://humorous-angry-detail.glitch.me/" + endpoint;
+            }
         }
     </script>
 </body>
