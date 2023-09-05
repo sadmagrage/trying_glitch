@@ -1,3 +1,5 @@
+const path = require("path");
+
 const { Progress } = require("../dto/Progress");
 const progressModel = require("../models/progressModel");
 const { validateProgress} = require("../validators/progressValidator");
@@ -18,6 +20,28 @@ const findAll = async (req, res) => {
         res.status(400).json(error.message);
     }
 };
+
+const formGet = (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/progress_form.html"));
+}
+
+const formPost = async (req, res) => {
+    try {
+        const dateTime = new Date(req.body.datetime);
+
+        const allProgress = await progressModel.findAll();
+
+        const attempt = allProgress.length + 1;
+
+        const progress = new Progress(validateProgress({ attempt: attempt, ano: dateTime.getFullYear(), mes: dateTime.getMonth() + 1, dia: dateTime.getDate(), hora: dateTime.getHours(), minuto: dateTime.getMinutes(), segundo: 20 }));
+
+        await progressModel.save(progress);
+
+        res.json(progress);
+    } catch (error) {
+        res.json(error.message);
+    }
+}
 
 const findOne = async (req, res) => {
     const progressModelOptional = await progressModel.findOne(req.params.progress_id);
@@ -89,4 +113,4 @@ const del = async (req, res) => {
 
 };
 
-module.exports = { convertTimestamp, findAll, findOne, save, update, del }
+module.exports = { convertTimestamp, findAll, formGet, formPost, findOne, save, update, del }

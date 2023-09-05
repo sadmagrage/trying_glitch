@@ -7,6 +7,7 @@ const progressRouter = require("./routes/progressRoute");
 
 const app = express();
 
+//app.use(cors({origin: "*" }));
 app.use(cors({ origin: "https://sadmagrage.github.io" }));
 
 app.use(homeRouter.route);

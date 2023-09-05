@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const { Router } = require("express");
 
 const route = express.Router();
 
